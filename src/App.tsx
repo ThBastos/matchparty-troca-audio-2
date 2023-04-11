@@ -10,8 +10,8 @@ function App() {
   const audiotPlayerRef = useRef<any>(null);
 
   let audioOptions: YouTubeProps["opts"] = {
-    height: "150",
-    width: "640",
+    height: "1",
+    width: "1",
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 0,
