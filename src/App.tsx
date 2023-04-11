@@ -43,9 +43,18 @@ function App() {
     if (playing === 1) {
       setAudioChanged(true);
       defaultPlayerRef.current.internalPlayer.mute();
-      if (narrador === "galvao") changeAudioTo("TCU_wBDlJKw");
-      if (narrador === "cleber") changeAudioTo("lV8WGimP9jQ");
-      if (narrador === "fred") changeAudioTo("Ve4bgMZXZbQ");
+      if (narrador === "galvao") {
+        changeAudioTo("TCU_wBDlJKw");
+        setVideoID("TCU_wBDlJKw");
+      }
+      if (narrador === "cleber") {
+        changeAudioTo("lV8WGimP9jQ");
+        setVideoID("lV8WGimP9jQ");
+      }
+      if (narrador === "fred") {
+        changeAudioTo("Ve4bgMZXZbQ");
+        setVideoID("Ve4bgMZXZbQ");
+      }
       if (narrador === "original") {
         defaultPlayerRef.current.internalPlayer.unMute();
         audiotPlayerRef.current.internalPlayer.pauseVideo();
@@ -75,10 +84,31 @@ function App() {
     }, 3000);
   };
 
+  const _onStateChange = async (event: any) => {
+    console.log("_onStateChange event: ", event);
+    if (audioChanged) {
+      const currTime =
+        await defaultPlayerRef.current.internalPlayer.getCurrentTime();
+      audiotPlayerRef.current.internalPlayer.loadVideoById({
+        videoId: videoID,
+        startSeconds: Math.round(currTime),
+      });
+    }
+  };
+
+  //   player.on('seeking', function(){
+
+  //     if( getAudioChanged()==true)
+  //     {
+  //           playerTeste.loadVideoById({videoId:getAudioID(), startSeconds:Math.round(player.currentTime)});
+  //     }
+
+  // });
+
   return (
     <div className="App">
       <h1>Teste troca de áudio</h1>
-      <p>Usando: CRA + React + react-youtube</p>
+      <p>Usando: CRA + React + Typescript + react-youtube</p>
       <div className="grid_button">
         <button onClick={() => changeAudio("galvao")}>Galvão</button>
         <button onClick={() => changeAudio("cleber")}>Cleber</button>
@@ -86,7 +116,7 @@ function App() {
         <button onClick={() => changeAudio("original")}>Original</button>
       </div>
       <YouTube
-        videoId={videoID}
+        videoId={"91_H0BsyhBA"}
         opts={audioOptions}
         className="video-um"
         ref={audiotPlayerRef}
@@ -100,6 +130,7 @@ function App() {
           ref={defaultPlayerRef}
           onPlay={_onPlay}
           onPause={_onPause}
+          onStateChange={_onStateChange}
         />
       </div>
     </div>
