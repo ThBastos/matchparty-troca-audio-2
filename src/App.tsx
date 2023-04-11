@@ -10,8 +10,8 @@ function App() {
   const audiotPlayerRef = useRef<any>(null);
 
   let audioOptions: YouTubeProps["opts"] = {
-    height: "0",
-    width: "0",
+    height: "150",
+    width: "640",
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 0,
@@ -78,7 +78,7 @@ function App() {
   return (
     <div className="App">
       <h1>Teste troca de áudio</h1>
-      <p>Usando: Vite + React + react-youtube</p>
+      <p>Usando: CRA + React + react-youtube</p>
       <div className="grid_button">
         <button onClick={() => changeAudio("galvao")}>Galvão</button>
         <button onClick={() => changeAudio("cleber")}>Cleber</button>
