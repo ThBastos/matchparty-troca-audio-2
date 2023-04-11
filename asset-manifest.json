@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/matchparty-troca-audio-2/static/css/main.7f015066.css",
-    "main.js": "/matchparty-troca-audio-2/static/js/main.917caeb7.js",
+    "main.css": "/matchparty-troca-audio-2/static/css/main.3c8fb347.css",
+    "main.js": "/matchparty-troca-audio-2/static/js/main.9b9c767f.js",
     "static/js/787.1f2fdd40.chunk.js": "/matchparty-troca-audio-2/static/js/787.1f2fdd40.chunk.js",
     "index.html": "/matchparty-troca-audio-2/index.html",
-    "main.7f015066.css.map": "/matchparty-troca-audio-2/static/css/main.7f015066.css.map",
-    "main.917caeb7.js.map": "/matchparty-troca-audio-2/static/js/main.917caeb7.js.map",
+    "main.3c8fb347.css.map": "/matchparty-troca-audio-2/static/css/main.3c8fb347.css.map",
+    "main.9b9c767f.js.map": "/matchparty-troca-audio-2/static/js/main.9b9c767f.js.map",
     "787.1f2fdd40.chunk.js.map": "/matchparty-troca-audio-2/static/js/787.1f2fdd40.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f015066.css",
-    "static/js/main.917caeb7.js"
+    "static/css/main.3c8fb347.css",
+    "static/js/main.9b9c767f.js"
   ]
 }
